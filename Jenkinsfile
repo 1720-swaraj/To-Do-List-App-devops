@@ -1,6 +1,6 @@
 pipeline{
     agent{
-        label "dev-env"
+        label "built-in"
     }
     tools{
         git "git-install"
@@ -12,13 +12,13 @@ pipeline{
                 checkout scm
             }
         }
-        stage("build-docker-image"){
-            steps{
-                script{
-                    dockerImage = docker.build("swaraj9/nodeapp:${env.BUILD_NUMBER}")
-                }
+        // stage("build-docker-image"){
+        //     steps{
+        //         script{
+        //             dockerImage = docker.build("swaraj9/nodeapp:${env.BUILD_NUMBER}")
+        //         }
                 
-            }
-        }
+        //     }
+        // }
     }
 }
