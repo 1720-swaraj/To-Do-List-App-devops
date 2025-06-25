@@ -12,5 +12,5 @@ RUN npm install
 # Copy remaining files
 COPY . .
 
-# Default command
-CMD ["node", "app.js"]
+# # Default command
+# CMD ["node", "app.js"]
