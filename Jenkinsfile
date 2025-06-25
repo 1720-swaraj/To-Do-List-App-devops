@@ -11,14 +11,13 @@ pipeline {
             steps {
                 cleanWs()
                 checkout scm
-                stash name: 'node-deps', includes: 'package.json, package-lock.json'
             }
         }
         stage('build-docker-image') {
             steps {
                 script {
-                    unstash 'node-deps'
-                    dockerImage = docker.build("swaraj9/nodeapp:${env.BUILD_NUMBER}")
+                    
+                    def dockerImage = docker.build("swaraj9/nodeapp:${env.BUILD_NUMBER}")
                 }
             }
         }
