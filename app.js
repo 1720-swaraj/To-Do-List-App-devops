@@ -16,12 +16,15 @@ app.set("view engine", "ejs");
 // mongoose.connect("mongodb://127.0.0.1:27017/todolistDB");
 
 // dotenv
-dotenv.config({ path: "./config.env" });
+dotenv.config({ path: "./.env" });
 
 // Set up mongoose connection "MongoDB Atlas"
-
+console.log("DB URI from env:", process.env.DATABASE);
 const DB = process.env.DATABASE;
-mongoose.connect(DB);
+mongoose.connect(DB, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 // Mongoose Schema for individual to-do list items
 const itemSchema = new mongoose.Schema({
@@ -187,6 +190,6 @@ app.get("/about", function (req, res) {
 });
 
 // Start the server at Port 3000
-app.listen(3000, function () {
-  console.log("Server started on port 3000.");
+app.listen(9000, function () {
+  console.log("Server started on port 9000.");
 });
