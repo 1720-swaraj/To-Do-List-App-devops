@@ -11,7 +11,7 @@ pipeline{
             steps{
                 cleanWs()
                 checkout scm
-                stash name: 'node-deps' includes: 'package.json, package-lock.json'
+                stash name: 'node-deps', includes: 'package.json, package-lock.json'
             }
         }
         stage("build-docker-image"){
