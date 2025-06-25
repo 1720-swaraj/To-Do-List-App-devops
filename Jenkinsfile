@@ -1,5 +1,7 @@
 pipeline{
-    agent "dev-env"
+    agent{
+        label "dev-env"
+    }
     tools{
         git "git-install"
     }
