@@ -16,9 +16,6 @@ pipeline {
         }
         stage('build-docker-image') {
             agent { label 'dev-env' }
-            tools {
-                git 'git-install'
-            }
             steps {
                 script {
                     unstash 'node-deps'
