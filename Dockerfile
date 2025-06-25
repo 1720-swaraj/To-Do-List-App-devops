@@ -7,10 +7,9 @@ WORKDIR /development
 COPY package*.json ./
 
 # Install dependencies in the correct directory
-RUN npm install
-
+RUN npm install && wget https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem 
 # Copy remaining files
 COPY . .
 
-# # Default command
-# CMD ["node", "app.js"]
+# Default command
+CMD ["node", "app.js"]
