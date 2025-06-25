@@ -15,7 +15,7 @@ pipeline{
         stage("build-docker-image"){
             steps{
                 script{
-                    dockerImage = docker.build("swaraj9/nodeapp:{env.BUILD_NUMBER}")
+                    dockerImage = docker.build("swaraj9/nodeapp:${env.BUILD_NUMBER}")
                 }
                 
             }
