@@ -9,9 +9,7 @@ pipeline{
     stages{
         stage("git-pull"){
             steps{
-                dir("/mnt/dev-env-ws"){
                 checkout scm
-                }
             }
         }
     }
