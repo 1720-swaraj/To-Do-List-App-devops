@@ -24,7 +24,7 @@ pipeline {
         stage('run-image') {
             steps {
                 script {
-                    sh "docker run -itdp 88:9999 --name c${env.BUILD_NUMBER} swaraj9/nodeapp:${env.BUILD_NUMBER}"
+                    sh "docker run -itdp 88:27017 --name c${env.BUILD_NUMBER} swaraj9/nodeapp:${env.BUILD_NUMBER}"
                 }
             }
         }
