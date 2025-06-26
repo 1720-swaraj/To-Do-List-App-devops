@@ -3,7 +3,7 @@ pipeline {
         label 'built-in'
     }
     tools {
-        git 'git-install'
+        git 'git'
     }
 
     stages {
